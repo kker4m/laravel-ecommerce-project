@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('users', App\Http\Controllers\Backend\UserController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
